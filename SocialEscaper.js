@@ -27,13 +27,13 @@ $(function() {
         return app;
     }
     function getEscCookie() {
-        return document.cookie;
+        return (document.cookie.indexOf("socesc=dontescape") > -1);
     }
     function setEscCookie() {
         document.cookie = "socesc=dontescape;path=/";
     }
     var socialApp = chkSocialApp();
-    if ("socesc=dontescape" !== getEscCookie() && "" !== socialApp) {
+    if (!getEscCookie() && "" !== socialApp) {
         var platform = chkMobilePlatform() || "mobile";
         socesc_txt_head = socesc_txt_head.replace("__APP__", socialApp).replace("__PF__", platform);
         secesc_txt_cont = secesc_txt_cont.replace("__APP__", socialApp);
