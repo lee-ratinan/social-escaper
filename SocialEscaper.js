@@ -1,6 +1,6 @@
 $(function() {
     // Test to be replaced
-    var logo_file = "logo.jpg";
+    var logo_file = "social_escaper.jpg";
     var socesc_txt_head = "You are browsing within __APP__ __PF__ application";
     var socesc_txt_body1 = "This could possibly cause unexpected issues.";
     var socesc_txt_body2 = "Please click the menu button (as show below) for navigating to your favorite browser.";
@@ -9,7 +9,7 @@ $(function() {
     // CODE
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     // TEST ************************************
-    userAgent = "Fake user agent: FBAN iPhone";
+    userAgent = "Fake user agent: Line Android ";
     // TEST ************************************
     function chkMobilePlatform() {
         var platform = "";
@@ -37,11 +37,11 @@ $(function() {
         instruction_file = instruction_file.replace("{{APP}}", socialApp);
         $("body").append('<div id="socesc_wrapper">'+
                     '<div id="socesc_right_btn"><a id="socesc_close_btn">&times;</a></div>'+
-                    '<img src="'+logo_file+'" />'+
+                    '<img class="socesc-img" src="'+logo_file+'" />'+
                     '<h1>'+socesc_txt_head+'</h1>'+
                     '<p>'+socesc_txt_body1+'</p>'+
                     '<p>'+socesc_txt_body2+'</p>'+
-                    '<img src="'+instruction_file+'" />'+
+                    '<img class="socesc_instruction" src="'+instruction_file+'" />'+
                     '<p><a id="socesc_close_txt">'+secesc_txt_cont+'</a></p>'+
                 '</div>');
     }

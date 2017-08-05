@@ -2,6 +2,7 @@
     background-color: #fff;
     height: 100%;
     left: 0px;
+    overflow-y: scroll;
     position: fixed;
     text-align: center;
     top: 0px;
@@ -35,4 +36,12 @@
 #socesc_close_txt:hover:after {
     width: 100%;
     background-color: #080;
+}
+.socesc-img {
+    max-width: 200px;
+}
+.socesc_instruction {
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 500px;
 }
