@@ -8,9 +8,6 @@ $(function() {
     var secesc_txt_cont = "Continue using in __APP__";
     // CODE
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    // TEST ************************************
-    userAgent = "Fake user agent: Line Android ";
-    // TEST ************************************
     function chkMobilePlatform() {
         var platform = "";
         if (userAgent.indexOf("iPhone") > -1) {
