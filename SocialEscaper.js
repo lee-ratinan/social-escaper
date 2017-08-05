@@ -8,6 +8,9 @@ $(function() {
     var secesc_txt_cont = "Continue using in __APP__";
     // CODE
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    // TEST
+    userAgent = "FBAN iPhone";
+    // TEST
     function chkMobilePlatform() {
         var platform = "";
         if (userAgent.indexOf("iPhone") > -1) {
@@ -26,8 +29,14 @@ $(function() {
         }
         return app;
     }
+    function getEscCookie() {
+        return document.cookie;
+    }
+    function setEscCookie() {
+        document.cookie = "socesc=dontescape;path=/";
+    }
     var socialApp = chkSocialApp();
-    if ("" !== socialApp) {
+    if ("socesc=dontescape" !== getEscCookie() && "" !== socialApp) {
         var platform = chkMobilePlatform() || "mobile";
         socesc_txt_head = socesc_txt_head.replace("__APP__", socialApp).replace("__PF__", platform);
         secesc_txt_cont = secesc_txt_cont.replace("__APP__", socialApp);
@@ -44,6 +53,7 @@ $(function() {
     }
     $("#socesc_close_txt, #socesc_close_btn").click(function (e) {
 	e.preventDefault();
+        setEscCookie();
 	$("#socesc_wrapper").slideUp();
     });
 });
